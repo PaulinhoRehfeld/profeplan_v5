@@ -49,8 +49,34 @@ O primeiro piloto será:
 
 A recuperação deverá aplicar filtros pedagógicos, curriculares e jurídicos antes da busca vetorial. O agente não deverá consultar indiscriminadamente todo o acervo.
 
+## Documentos principais
+
+### Governança
+
+- [Project Charter](00-governance/PROJECT-CHARTER.md)
+- [Decision Log](00-governance/DECISION-LOG.md)
+- [Política de continuidade e forks](00-governance/CONTINUITY-AND-FORK-POLICY.md)
+
+### Arquitetura
+
+- [Visão geral da arquitetura](02-architecture/ARCHITECTURE-OVERVIEW.md)
+- [Perfil do agente Sócrates 2](03-agents/profiles/socrates-2/README.md)
+- [Modelo de conhecimento](04-knowledge/KNOWLEDGE-MODEL.md)
+- [Padrão de pacotes curriculares](05-curriculum/CURRICULUM-PACKAGE-STANDARD.md)
+- [Pipeline de recuperação](06-retrieval/RETRIEVAL-PIPELINE.md)
+- [Ordem de Produção Pedagógica](07-production/PEDAGOGICAL-PRODUCTION-ORDER.md)
+
+### Entrega
+
+- [Mapa de Epics](12-delivery/EPICS.md)
+- [Escopo do MVP Sócrates 2](12-delivery/MVP-SOCRATES-2.md)
+
+## Política de continuidade
+
+O assistente deverá avisar quando um fork de conversa for recomendado. O próximo fork somente deverá ocorrer após a aprovação do mapa de Epics e do escopo do MVP Sócrates 2, com documento de continuidade previamente registrado no GitHub.
+
 ## Estado do projeto
 
-Fase atual: documentação e arquitetura.
+Fase atual: documentação, arquitetura e delimitação do MVP.
 
-Nenhuma implementação deve começar antes da aprovação do escopo, modelo de conhecimento, contratos dos agentes, fluxo de recuperação e critérios de qualidade.
+Nenhuma implementação deve começar antes da aprovação do escopo, modelo de conhecimento, contratos dos agentes, fluxo de recuperação, Epics, Stories e critérios de qualidade.
