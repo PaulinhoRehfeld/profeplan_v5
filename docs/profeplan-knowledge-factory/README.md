@@ -57,6 +57,7 @@ A recuperação deverá aplicar filtros pedagógicos, curriculares e jurídicos 
 - [Decision Log](00-governance/DECISION-LOG.md)
 - [Política de continuidade e forks](00-governance/CONTINUITY-AND-FORK-POLICY.md)
 - [Checkpoint do Marco 001](00-governance/CONTINUITY-CHECKPOINT-001.md)
+- [Checkpoint do Marco 002](00-governance/CONTINUITY-CHECKPOINT-002.md)
 
 ### Arquitetura
 
@@ -84,24 +85,50 @@ A recuperação deverá aplicar filtros pedagógicos, curriculares e jurídicos 
 - [Matriz de aceite do MVP](11-testing/MVP-ACCEPTANCE-MATRIX.md)
 - [Casos de falha e critérios de exclusão](11-testing/FAILURE-AND-EXCLUSION-CASES.md)
 
-## Política de continuidade
+## Marcos aprovados
 
-O assistente deverá avisar quando um fork de conversa for recomendado. O Marco 001 já foi encerrado. O próximo fork somente ocorrerá após a aprovação humana do pacote documental do Marco 002:
+### Marco 001
 
-- seleção de Epics do MVP;
-- Features;
-- User Stories;
+Aprovou visão, arquitetura, agentes, currículos plugáveis, conhecimento semielaborado, escopo e MVP do Sócrates 2.
+
+### Marco 002
+
+Aprovou integralmente, sem alterações:
+
+- EPIC-001 a EPIC-017 em escopo reduzido;
+- EPIC-018 bloqueado;
+- 39 Features do MVP;
+- 35 Features Must e 4 Should;
+- 39 User Stories;
 - critérios de aceite;
-- dependências;
 - prioridades MoSCoW;
+- dependências;
 - Definition of Ready;
 - Definition of Done;
-- casos de falha e exclusão.
+- 33 gates de aceite;
+- 50 casos de falha e exclusão;
+- ADR-012, ADR-013 e ADR-014.
 
-Antes do próximo fork deverá ser criado `00-governance/CONTINUITY-CHECKPOINT-002.md`.
+## Política de continuidade
+
+O segundo fork deve ocorrer após a aprovação do Marco 002. A continuidade está registrada em `00-governance/CONTINUITY-CHECKPOINT-002.md`.
+
+O próximo fork somente ocorrerá após a aprovação do Marco 003, que deverá conter:
+
+- análise técnica do repositório;
+- arquitetura técnica incremental;
+- contratos técnicos;
+- modelo lógico de dados;
+- segurança;
+- testes e observabilidade;
+- experimentos;
+- lotes de tarefas para o Codex;
+- definição do primeiro PR de código.
+
+Antes desse futuro fork deverá ser criado `00-governance/CONTINUITY-CHECKPOINT-003.md`.
 
 ## Estado do projeto
 
-Fase atual: documentação do backlog e critérios de implementação do MVP.
+Fase atual: Marcos 001 e 002 aprovados. Próxima fase: plano técnico de implementação antes da autorização de código.
 
-Nenhum código foi autorizado nesta fase. A implementação somente poderá começar após aprovação do Marco 002 e preparação do pacote técnico para o Codex.
+Nenhum código foi autorizado ou alterado nesta fase.
