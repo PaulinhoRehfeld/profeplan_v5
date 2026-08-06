@@ -77,13 +77,13 @@ Sócrates 2 e os demais especialistas serão configurações sobre uma infraestr
 
 A continuidade do projeto entre conversas será feita por marcos documentais, e não por uma contagem rígida de mensagens. O assistente deverá avisar quando o fork for necessário e registrar previamente um documento de continuidade no GitHub.
 
-**Consequência:** o Marco 001 foi encerrado antes da decomposição do MVP em Features e Stories. O Marco 002 somente será encerrado após aprovação humana do backlog e dos critérios de implementação.
+**Consequência:** o Marco 001 foi encerrado antes da decomposição do MVP em Features e Stories. O Marco 002 foi encerrado após aprovação integral do backlog e dos critérios de implementação.
 
 **Risco controlado:** evitar perda de decisões, duplicação de discussões e divergência entre conversas paralelas.
 
 ## ADR-012 — Epics selecionados para o MVP
 
-**Status:** proposto no Marco 002
+**Status:** aprovado no Marco 002
 
 Os EPIC-001 a EPIC-017 participam do MVP em escopo reduzido e explícito. O EPIC-018 permanece fora do MVP.
 
@@ -95,7 +95,7 @@ Os EPIC-001 a EPIC-017 participam do MVP em escopo reduzido e explícito. O EPIC
 
 ## ADR-013 — Priorização MoSCoW e preservação dos gates
 
-**Status:** proposto no Marco 002
+**Status:** aprovado no Marco 002
 
 O backlog do MVP será classificado em Must, Should, Could e Won't. Em conflito de prazo ou custo, Should e Could serão adiadas antes de reduzir gates jurídicos, pedagógicos, curriculares, autorais, inclusivos ou de rastreabilidade.
 
@@ -105,7 +105,7 @@ O backlog do MVP será classificado em Must, Should, Could e Won't. Em conflito 
 
 ## ADR-014 — Aprovação baseada em evidências não compensatórias
 
-**Status:** proposto no Marco 002
+**Status:** aprovado no Marco 002
 
 O MVP não será aprovado por média simples entre dimensões. Fonte proibida, erro conceitual relevante, ausência de rastreabilidade, reprodução extensa, mistura curricular ou falha de privacidade são bloqueadores independentes.
 
@@ -127,3 +127,5 @@ O MVP não será aprovado por média simples entre dimensões. Fonte proibida, e
 - versão oficial do recorte curricular MG usada no teste;
 - professores que participarão da avaliação;
 - limiares quantitativos finais de relevância e similaridade.
+
+Essas questões passam ao Marco 003 e deverão ser decididas por evidência, contratos e requisitos das Stories aprovadas, não por preferência técnica isolada.
