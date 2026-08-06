@@ -77,9 +77,41 @@ Sócrates 2 e os demais especialistas serão configurações sobre uma infraestr
 
 A continuidade do projeto entre conversas será feita por marcos documentais, e não por uma contagem rígida de mensagens. O assistente deverá avisar quando o fork for necessário e registrar previamente um documento de continuidade no GitHub.
 
-**Consequência:** o próximo fork ocorrerá após a aprovação do mapa de Epics e do escopo do MVP Sócrates 2.
+**Consequência:** o Marco 001 foi encerrado antes da decomposição do MVP em Features e Stories. O Marco 002 somente será encerrado após aprovação humana do backlog e dos critérios de implementação.
 
 **Risco controlado:** evitar perda de decisões, duplicação de discussões e divergência entre conversas paralelas.
+
+## ADR-012 — Epics selecionados para o MVP
+
+**Status:** proposto no Marco 002
+
+Os EPIC-001 a EPIC-017 participam do MVP em escopo reduzido e explícito. O EPIC-018 permanece fora do MVP.
+
+**Contexto:** o piloto precisa validar o fluxo completo de fontes, componentes, currículo, recuperação, agente, geração, gates, entrega, métricas e avaliação.
+
+**Consequência:** um Epic selecionado não autoriza suas capacidades de Fase 2 ou Fase 3. O detalhamento válido é o documento `12-delivery/MVP-EPIC-SELECTION.md`.
+
+**Risco controlado:** impedir que “MVP completo” seja interpretado como ingestão industrial, Gráfica avançada, RS ou novos agentes.
+
+## ADR-013 — Priorização MoSCoW e preservação dos gates
+
+**Status:** proposto no Marco 002
+
+O backlog do MVP será classificado em Must, Should, Could e Won't. Em conflito de prazo ou custo, Should e Could serão adiadas antes de reduzir gates jurídicos, pedagógicos, curriculares, autorais, inclusivos ou de rastreabilidade.
+
+**Consequência:** aparência visual, variedade e automações auxiliares não compensam falhas bloqueantes.
+
+**Risco controlado:** evitar um MVP visualmente atraente, mas pedagogicamente ou juridicamente inseguro.
+
+## ADR-014 — Aprovação baseada em evidências não compensatórias
+
+**Status:** proposto no Marco 002
+
+O MVP não será aprovado por média simples entre dimensões. Fonte proibida, erro conceitual relevante, ausência de rastreabilidade, reprodução extensa, mistura curricular ou falha de privacidade são bloqueadores independentes.
+
+**Consequência:** a matriz de aceite utilizará gates bloqueantes e estados aprovado, reprovado, inconclusivo e não aplicável.
+
+**Risco controlado:** impedir que criatividade, velocidade ou baixo custo escondam falhas críticas.
 
 ## Questões ainda não decididas
 
@@ -90,4 +122,8 @@ A continuidade do projeto entre conversas será feita por marcos documentais, e 
 - política jurídica para cada categoria de obra PNLD;
 - uso de uma ou várias tabelas físicas de embeddings;
 - mecanismo de cache;
-- formato de integração futura com a Gráfica.
+- formato de integração futura com a Gráfica;
+- conjunto exato de fontes do piloto;
+- versão oficial do recorte curricular MG usada no teste;
+- professores que participarão da avaliação;
+- limiares quantitativos finais de relevância e similaridade.
