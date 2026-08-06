@@ -71,6 +71,16 @@ Nenhuma implementação será iniciada antes da aprovação dos documentos essen
 
 Sócrates 2 e os demais especialistas serão configurações sobre uma infraestrutura comum, evitando duplicação de código, prompts e bancos.
 
+## ADR-011 — Continuidade por marcos e forks controlados
+
+**Status:** aprovado
+
+A continuidade do projeto entre conversas será feita por marcos documentais, e não por uma contagem rígida de mensagens. O assistente deverá avisar quando o fork for necessário e registrar previamente um documento de continuidade no GitHub.
+
+**Consequência:** o próximo fork ocorrerá após a aprovação do mapa de Epics e do escopo do MVP Sócrates 2.
+
+**Risco controlado:** evitar perda de decisões, duplicação de discussões e divergência entre conversas paralelas.
+
 ## Questões ainda não decididas
 
 - modelo de embeddings;
