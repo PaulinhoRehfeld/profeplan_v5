@@ -2,7 +2,9 @@
 
 ## Status
 
-Aguardando aprovação humana. Nenhum código foi autorizado.
+Aprovado integralmente em 6 de agosto de 2026, sem ressalvas.
+
+A aprovação confirma as ADRs 015 a 027 e autoriza a criação do checkpoint de continuidade e a preparação do Lote 0. Não autoriza automaticamente escrita de código.
 
 ## Objetivo do marco
 
@@ -15,7 +17,7 @@ Foram encontrados dois repositórios com papéis diferentes:
 - `PaulinhoRehfeld/profeplan_v5`: documentação dos Marcos 001–003, sem monorepo executável;
 - `PaulinhoRehfeld/profeplan`: monorepo com `apps`, `packages`, agentes, IA, banco, currículo, PNLD, Gráfica e migrations.
 
-Recomendação: confirmar `PaulinhoRehfeld/profeplan` como repositório canônico de implementação e sincronizar nele a documentação aprovada antes do primeiro PR de código.
+Decisão aprovada: `PaulinhoRehfeld/profeplan` é o repositório canônico de implementação. A documentação aprovada deverá ser sincronizada nele de forma controlada durante o Lote 0, antes do primeiro PR de código.
 
 ## Documentos técnicos criados
 
@@ -56,11 +58,11 @@ Recomendação: confirmar `PaulinhoRehfeld/profeplan` como repositório canônic
 - `12-delivery/STORY-READINESS-ASSESSMENT.md`
 - `12-delivery/TECHNICAL-RISK-REGISTER.md`
 
-## Resumo das decisões propostas
+## Decisões aprovadas
 
 ### ADR-015
 
-Confirmar o repositório canônico antes do código. Recomendação: `PaulinhoRehfeld/profeplan`.
+`PaulinhoRehfeld/profeplan` é o repositório canônico da implementação.
 
 ### ADR-016
 
@@ -72,23 +74,23 @@ Implementar em ondas verticais e cumulativas.
 
 ### ADR-018
 
-Ingestão/preparação assíncronas; solicitação/entrega predominantemente síncronas.
+Ingestão e preparação assíncronas; solicitação e entrega predominantemente síncronas no MVP.
 
 ### ADR-019
 
-Contract-first.
+Adotar contract-first.
 
 ### ADR-020
 
-Filtros determinísticos antes da busca lexical e semântica; suficiência explícita.
+Aplicar filtros determinísticos antes da busca lexical e semântica, com suficiência explícita.
 
 ### ADR-021
 
-Embedding, dimensão, índice, fusão, reranker, orçamento e cache dependem de experimentos.
+Embedding, dimensão, índice, fusão, reranker, orçamento e cache dependem de experimentos reproduzíveis.
 
 ### ADR-022
 
-Corpus compartilhado acessado por serviços autorizados, não por leitura pública direta.
+Corpus compartilhado acessado por serviços autorizados, sem leitura pública direta.
 
 ### ADR-023
 
@@ -104,39 +106,39 @@ Baseline justo e piloto controlado; evidência insuficiente é inconclusiva.
 
 ### ADR-026
 
-Sócrates 2 como perfil do runtime comum.
+Sócrates 2 como perfil versionado do runtime comum.
 
 ### ADR-027
 
 Primeiro PR de código somente com contratos, fixtures e testes.
 
-## Arquitetura incremental
+## Arquitetura incremental aprovada
 
-1. Onda 0 — decisões e contratos;
+1. Onda 0 — decisões, sincronização e contratos;
 2. Onda 1 — fontes;
-3. Onda 2 — segmentos/componentes;
-4. Onda 3 — currículo/filtros;
+3. Onda 2 — segmentos e componentes;
+4. Onda 3 — currículo e filtros;
 5. Onda 4 — retrieval experimental;
-6. Onda 5 — OPP/Sócrates 2;
-7. Onda 6 — gates/entrega;
-8. Onda 7 — avaliação/piloto.
+6. Onda 5 — OPP e Sócrates 2;
+7. Onda 6 — gates e entrega;
+8. Onda 7 — avaliação e piloto.
 
 ## Lotes Codex
 
-Foram definidos Lotes 0–12, com dependências, Stories, limites e condições de interrupção.
+Foram aprovados os Lotes 0–12, com dependências, Stories, limites e condições de interrupção.
 
-O Lote 0 sincroniza documentação e confirma baseline. O primeiro PR de código é o Lote 1 contract-first.
+O Lote 0 sincroniza a documentação, confirma o baseline do monorepo e prepara a autorização específica do primeiro PR de código. O primeiro PR de código continua sendo o Lote 1 contract-first.
 
-## Primeiro PR de código proposto
+## Primeiro PR de código aprovado em princípio
 
-Conteúdo:
+Conteúdo permitido após autorização específica:
 
 - contratos de domínio;
 - enums;
 - fixtures sintéticas;
 - testes de schema e invariantes.
 
-Exclusões:
+Exclusões obrigatórias:
 
 - banco;
 - migration;
@@ -146,7 +148,7 @@ Exclusões:
 - agente;
 - frontend;
 - fonte real;
-- RS;
+- Rio Grande do Sul;
 - Gráfica avançada.
 
 ## Prontidão
@@ -164,14 +166,14 @@ Exclusões:
 - US-015.1;
 - US-016.1.
 
-Elas ainda não estão `Ready for Code` por causa dos gates globais.
+Essas Stories ainda não estão `Ready for Code`. O Lote 0 deverá confirmar branch, baseline, sincronização documental e comandos reais de validação do monorepo.
 
-### Bloqueios principais
+### Bloqueios restantes
 
-- repositório canônico;
+- conclusão do Lote 0;
 - fonte autorizada do piloto;
 - versão curricular MG;
-- schema físico/RLS;
+- schema físico e RLS;
 - dataset de retrieval;
 - experimentos;
 - validadores calibrados;
@@ -181,11 +183,11 @@ Elas ainda não estão `Ready for Code` por causa dos gates globais.
 
 US-018.1 e todo o EPIC-018 permanecem bloqueados.
 
-## Pontos que a aprovação do Marco 003 deve confirmar
+## Confirmações formais da aprovação
 
-1. `PaulinhoRehfeld/profeplan` será o repositório canônico de código;
+1. `PaulinhoRehfeld/profeplan` é o repositório canônico de código;
 2. a documentação aprovada será sincronizada nesse repositório antes da implementação;
-3. a arquitetura será modular, reutilizando o monorepo;
+3. a arquitetura será modular e reutilizará o monorepo;
 4. as ondas e lotes Codex estão aprovados;
 5. contratos precedem banco, API e IA;
 6. filtros precedem similaridade;
@@ -197,35 +199,23 @@ US-018.1 e todo o EPIC-018 permanecem bloqueados.
 12. nenhum modelo de embedding será escolhido no primeiro PR;
 13. EPIC-018 continuará bloqueado.
 
-## Aprovação possível
+## Efeitos da aprovação
 
-### Aprovação integral
-
-Aprova ADR-015 a ADR-027 e autoriza preparar o checkpoint e o prompt do Lote 0. Não autoriza automaticamente o primeiro PR de código; o Lote 0 deverá confirmar baseline e documentação no repositório canônico.
-
-### Aprovação com ressalvas
-
-As ressalvas deverão identificar ADR/documento e alteração necessária.
-
-### Reprovação parcial
-
-Decisões não aprovadas permanecem bloqueantes quando afetarem segurança, contrato ou repositório.
-
-## O que acontecerá após aprovação
+A aprovação autoriza:
 
 1. atualizar ADR-015 a ADR-027 para aprovadas;
 2. criar `00-governance/CONTINUITY-CHECKPOINT-003.md`;
-3. registrar fechamento no PR nº 1;
-4. avisar explicitamente o próximo fork;
-5. no Marco 004, executar o Lote 0 documental no repositório canônico;
-6. somente depois preparar a autorização específica do primeiro PR de código.
+3. registrar o fechamento do Marco 003 no PR nº 1;
+4. realizar o próximo fork;
+5. iniciar o Marco 004 pelo Lote 0 documental e de descoberta técnica.
 
-## O que não acontecerá automaticamente
+## O que continua não autorizado
 
-- merge do PR nº 1;
+- merge automático do PR nº 1;
 - escrita de código;
 - migration;
-- uso de fonte PNLD;
+- uso de fonte PNLD sem autorização;
 - criação de embeddings;
 - ativação de Sócrates 2;
-- envio de tarefa ampla ao Codex.
+- implementação de RS, novos agentes, novas disciplinas, Gráfica avançada, PDF ou PPTX sofisticados;
+- envio de tarefa ampla e sem lote ao Codex.
