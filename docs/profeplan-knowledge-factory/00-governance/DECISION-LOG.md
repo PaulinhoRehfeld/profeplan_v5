@@ -77,7 +77,7 @@ Sócrates 2 e os demais especialistas serão configurações sobre uma infraestr
 
 A continuidade do projeto entre conversas será feita por marcos documentais, e não por uma contagem rígida de mensagens. O assistente deverá avisar quando o fork for necessário e registrar previamente um documento de continuidade no GitHub.
 
-**Consequência:** o Marco 001 foi encerrado antes da decomposição do MVP em Features e Stories. O Marco 002 foi encerrado após aprovação integral do backlog e dos critérios de implementação.
+**Consequência:** o Marco 001 foi encerrado antes da decomposição do MVP em Features e Stories. O Marco 002 foi encerrado após aprovação integral do backlog e dos critérios de implementação. O Marco 003 foi encerrado após aprovação integral do plano técnico anterior ao código.
 
 **Risco controlado:** evitar perda de decisões, duplicação de discussões e divergência entre conversas paralelas.
 
@@ -115,83 +115,85 @@ O MVP não será aprovado por média simples entre dimensões. Fonte proibida, e
 
 ## ADR-015 — Repositório canônico da implementação
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
-O monorepo executável deverá ser confirmado antes do primeiro código. A recomendação técnica é utilizar `PaulinhoRehfeld/profeplan`, após confirmação humana, e sincronizar nele a documentação aprovada.
+`PaulinhoRehfeld/profeplan` é o repositório canônico da implementação da Knowledge Factory. A documentação aprovada nos Marcos 001–003 deverá ser sincronizada de forma controlada nesse monorepo durante o Lote 0, antes do primeiro PR de código.
 
-**Contexto:** `profeplan_v5` contém a documentação, enquanto `profeplan` contém apps, packages, agentes, IA, banco e migrations.
+**Contexto:** `profeplan_v5` contém a documentação dos marcos, enquanto `profeplan` contém apps, packages, agentes, IA, banco e migrations.
 
-**Consequência:** nenhuma Story recebe `Ready for Code` antes dessa decisão.
+**Consequência:** nenhuma Story recebe `Ready for Code` antes da conclusão do Lote 0 e da confirmação do baseline técnico no repositório canônico.
+
+**Risco controlado:** evitar implementação em repositório sem runtime e divergência entre documentação e código.
 
 ## ADR-016 — Reutilização modular do monorepo
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 A Knowledge Factory será distribuída pelos módulos responsáveis — types, industry-pnld, industry-curriculum, db, ai, agents, bff, web e observabilidade — evitando um novo pacote monolítico sem necessidade.
 
 ## ADR-017 — Implementação em ondas verticais
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 A implementação seguirá ondas cumulativas, com capacidade testável e gate de saída em cada uma.
 
 ## ADR-018 — Fronteiras síncronas e assíncronas
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 Ingestão, segmentação, embeddings e avaliações em lote serão assíncronos; criação da OPP, retrieval em estoque publicado, geração, gates e entrega serão predominantemente síncronos no MVP.
 
 ## ADR-019 — Contract-first
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 Contratos compartilhados e testes precederão persistência, APIs, modelos e agentes.
 
 ## ADR-020 — Recuperação híbrida filtrada
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 Filtros determinísticos serão aplicados antes das buscas lexical e semântica. A fusão será auditável e o pipeline terá estado explícito de insuficiência.
 
 ## ADR-021 — Escolhas de retrieval orientadas por experimentos
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 Embedding, dimensão, índice, fusão, reranker, orçamento e cache serão escolhidos por experimento reproduzível, não por preferência ou legado.
 
 ## ADR-022 — Corpus compartilhado sem leitura pública direta
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 Conhecimento global será acessado por serviços autorizados. Licença, status, perfil do agente e escopo participam da autorização.
 
 ## ADR-023 — Quality gates calibrados e não compensatórios
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 Validadores existentes só entram no pipeline obrigatório após avaliação contra casos dourados. Erro de gate Must bloqueia aprovação.
 
 ## ADR-024 — ModelPolicy e observabilidade por OPP
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 Agentes não acessam SDKs de provedor diretamente. Modelos, limites, retry e fallback são resolvidos por política versionada; tokens, custo e latência são medidos por etapa da OPP.
 
 ## ADR-025 — Baseline justo e piloto controlado
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 A avaliação usa casos dourados, execução pareada e baseline genérico justo. Evidência insuficiente resulta em piloto inconclusivo.
 
 ## ADR-026 — Sócrates 2 como perfil do runtime comum
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 Sócrates 2 será um perfil versionado com escopo, produtos, ferramentas e bloqueios, não um agente duplicado por Estado ou ano.
 
 ## ADR-027 — Primeiro PR de código contract-first
 
-**Status:** proposto no Marco 003
+**Status:** aprovado no Marco 003
 
 O primeiro PR de código conterá somente contratos, enums, fixtures e testes, sem banco, migrations, IA, API ou mudança de comportamento.
 
@@ -199,9 +201,9 @@ O primeiro PR de código conterá somente contratos, enums, fixtures e testes, s
 
 ### Gate anterior ao código
 
-- confirmação do repositório canônico;
-- branch base do primeiro PR;
-- estratégia de sincronização definitiva da documentação.
+- branch base e nome da branch do primeiro PR no repositório canônico;
+- mecanismo de sincronização e validação da documentação durante o Lote 0;
+- resultado do build, typecheck, lint e testes do monorepo no baseline confirmado.
 
 ### Fontes e currículo
 
