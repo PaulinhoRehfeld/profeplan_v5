@@ -58,6 +58,7 @@ A recuperação deverá aplicar filtros pedagógicos, curriculares e jurídicos 
 - [Política de continuidade e forks](00-governance/CONTINUITY-AND-FORK-POLICY.md)
 - [Checkpoint do Marco 001](00-governance/CONTINUITY-CHECKPOINT-001.md)
 - [Checkpoint do Marco 002](00-governance/CONTINUITY-CHECKPOINT-002.md)
+- [Checkpoint do Marco 003](00-governance/CONTINUITY-CHECKPOINT-003.md)
 
 ### Arquitetura conceitual
 
@@ -68,7 +69,7 @@ A recuperação deverá aplicar filtros pedagógicos, curriculares e jurídicos 
 - [Pipeline de recuperação](06-retrieval/RETRIEVAL-PIPELINE.md)
 - [Ordem de Produção Pedagógica](07-production/PEDAGOGICAL-PRODUCTION-ORDER.md)
 
-### Marco 003 — arquitetura técnica proposta
+### Marco 003 — arquitetura técnica aprovada
 
 - [Avaliação dos repositórios](02-architecture/REPOSITORY-INTEGRATION-ASSESSMENT.md)
 - [Mapa de capacidades técnicas](02-architecture/TECHNICAL-CAPABILITY-MAP.md)
@@ -131,42 +132,48 @@ Aprovou integralmente, sem alterações:
 - casos de falha e exclusão;
 - ADR-012, ADR-013 e ADR-014.
 
-## Marco em avaliação
-
 ### Marco 003
 
-Produziu:
+Aprovado integralmente em 6 de agosto de 2026, sem ressalvas.
 
-- análise do repositório real;
+Aprovou:
+
+- `PaulinhoRehfeld/profeplan` como repositório canônico da implementação;
+- sincronização controlada da documentação durante o Lote 0;
 - separação entre capacidades existentes, adaptáveis e novas;
 - arquitetura incremental em ondas;
-- contratos técnicos;
-- modelo lógico de dados;
-- segurança/RLS/auditoria;
-- retrieval híbrido e experimentos;
-- ModelPolicy, tokens, custo e observabilidade;
-- fixtures, casos dourados e baseline;
+- contratos técnicos antes de banco, APIs e IA;
+- modelo lógico de dados sem migrations;
+- segurança, RLS, auditoria e minimização;
+- retrieval híbrido com filtros antes da similaridade;
+- experimentos obrigatórios para embedding, dimensão, índice, fusão, reranking, orçamento e cache;
+- ModelPolicy, tokens, custo, latência e observabilidade por OPP;
+- fixtures, casos dourados e baseline genérico;
 - mapeamento técnico das Stories;
-- lotes para o Codex;
-- primeiro PR contract-first;
-- avaliação de prontidão;
-- registro de riscos;
-- ADR-015 a ADR-027 propostas.
+- Lotes 0–12 para o Codex;
+- primeiro PR de código contract-first;
+- ADR-015 a ADR-027.
 
-O Marco 003 aguarda aprovação humana. Nenhum código foi autorizado.
+A aprovação do Marco 003 não autorizou automaticamente escrita de código.
 
 ## Política de continuidade
 
-O próximo fork somente ocorrerá após a aprovação do Marco 003.
+O Marco 003 está encerrado e o checkpoint de continuidade foi criado.
 
-Antes dele deverá ser criado:
+**Este é o momento oficial do próximo fork.**
 
-`00-governance/CONTINUITY-CHECKPOINT-003.md`
+O Marco 004 deverá ser iniciado em uma nova conversa e executar primeiro o Lote 0:
 
-O Marco 004 será iniciado no novo chat e deverá executar primeiro o Lote 0: decisão/sincronização do repositório, baseline técnico e preparação do primeiro lote de código. A aprovação do Marco 003 não equivale a autorização automática para escrever código.
+1. trabalhar no repositório canônico `PaulinhoRehfeld/profeplan`;
+2. confirmar branch base e baseline técnico real;
+3. executar ou auditar build, typecheck, lint e testes existentes;
+4. sincronizar a documentação aprovada dos Marcos 001–003;
+5. validar os destinos dos módulos no monorepo;
+6. preparar a autorização específica do primeiro PR contract-first;
+7. não escrever código de produto antes dessa autorização.
 
 ## Estado do projeto
 
-Fase atual: Marco 003 completo em proposta e aguardando aprovação.
+Fase atual: Marcos 001, 002 e 003 aprovados. Próximo passo: fork para o Marco 004 e execução do Lote 0.
 
-Nenhum código, migration, banco, dependência, modelo, embedding ou integração de produção foi alterado nesta fase.
+Nenhum código, migration, banco, dependência, modelo, embedding ou integração de produção foi alterado durante o Marco 003.
